@@ -26,25 +26,28 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px;
+            padding: 15px 20px;
             z-index: 1000;
             transition: background-color 0.3s ease;
+            background-color: rgba(18, 18, 18, 0.95);
         }
 
         header.scrolled {
-            background-color: rgba(18, 18, 18, 0.9);
+            background-color: rgba(18, 18, 18, 1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
         .nav-links {
@@ -60,10 +63,11 @@
             color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 600;
         }
 
         .nav-links a:hover {
-            color: #4CAF50;
+            color: #00a8e8;
         }
 
         /* Hero section styles */
@@ -73,7 +77,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-image: url('https://source.unsplash.com/random/1920x1080?technology');
+            background-image: url('https://source.unsplash.com/random/1920x1080?technology,dark');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -86,7 +90,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
         }
 
         .hero-content {
@@ -109,16 +113,17 @@
         .cta-button {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #4CAF50;
+            background-color: #00a8e8;
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             animation: fadeInUp 1s ease-out 1s both;
+            font-weight: 600;
         }
 
         .cta-button:hover {
-            background-color: #45a049;
+            background-color: #0077b6;
             transform: translateY(-3px);
         }
 
@@ -150,13 +155,18 @@
         .about-image img {
             max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Services section styles */
         .services {
             padding: 100px 0;
             background-color: #121212;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .services-grid {
@@ -174,16 +184,17 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
 
         .service-card i {
             font-size: 48px;
-            color: #4CAF50;
+            color: #00a8e8;
             margin-bottom: 20px;
         }
 
@@ -207,7 +218,7 @@
         }
 
         .social-icons a:hover {
-            color: #4CAF50;
+            color: #00a8e8;
         }
 
         /* Animations */
@@ -226,7 +237,9 @@
 <body>
     <header>
         <nav>
-            <div class="logo">InnoGryph</div>
+            <div class="logo">
+                <img src="/api/placeholder/200/100" alt="InnoGryph Logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -248,10 +261,11 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>About Us</h2>
-                <p>InnoGryph is at the forefront of innovation, delivering cutting-edge solutions to complex challenges. Our team of experts is dedicated to pushing the boundaries of technology and creativity.</p>
+                <p>InnoGryph is at the forefront of innovation, delivering cutting-edge solutions to complex challenges. Our team of experts is dedicated to pushing the boundaries of technology and creativity, just like the mythical griffin that inspires our name and logo.</p>
+                <p>With a blend of strength, intelligence, and agility, we tackle each project with the same determination and vision that our griffin embodies. Our mission is to soar above conventional thinking and bring transformative ideas to life.</p>
             </div>
             <div class="about-image">
-                <img src="/api/placeholder/600/400" alt="About InnoGryph">
+                <img src="/api/placeholder/600/400" alt="InnoGryph Team">
             </div>
         </div>
     </section>
@@ -262,17 +276,17 @@
             <div class="service-card">
                 <i class="fas fa-laptop-code"></i>
                 <h3>Web Development</h3>
-                <p>Custom web solutions tailored to your needs</p>
+                <p>Custom web solutions tailored to your needs, built with cutting-edge technologies and designed for optimal user experience.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-mobile-alt"></i>
                 <h3>Mobile Apps</h3>
-                <p>Innovative mobile applications for iOS and Android</p>
+                <p>Innovative mobile applications for iOS and Android that engage users and deliver seamless functionality across devices.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-chart-line"></i>
                 <h3>Data Analytics</h3>
-                <p>Powerful insights from your data</p>
+                <p>Powerful insights from your data, using advanced analytics and machine learning to drive informed decision-making.</p>
             </div>
         </div>
     </section>
