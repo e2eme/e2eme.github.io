@@ -2,68 +2,333 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnoGryph - Empowering Small Businesses with AI</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>InnoGryph - Innovative Solutions</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #121212;
+            overflow-x: hidden;
+        }
+
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(18, 18, 18, 0.9);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        /* Hero section styles */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('https://source.unsplash.com/random/1920x1080?technology');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        /* About section styles */
+        .about {
+            padding: 100px 0;
+            background-color: #1a1a1a;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services section styles */
+        .services {
+            padding: 100px 0;
+            background-color: #121212;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card i {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">InnoGryph</a>
-            </div>
+    <header>
+        <nav>
+            <div class="logo">InnoGryph</div>
             <ul class="nav-links">
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="header-content">
-            <h1>Empowering Small Businesses with AI</h1>
-            <p>Revolutionize your business operations with cutting-edge AI solutions tailored to your needs.</p>
-            <a href="#services" class="cta-button">Discover Our Services</a>
-        </div>
     </header>
 
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2>About InnoGryph</h2>
-            <p>At InnoGryph, we are dedicated to making advanced AI technology accessible and practical for small and medium-sized businesses. Our mission is to help you streamline operations, enhance decision-making, and unlock new efficiencies.</p>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to InnoGryph</h1>
+            <p>Innovative solutions for a brighter future</p>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </section>
 
-    <section id="services" class="services-section">
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>InnoGryph is at the forefront of innovation, delivering cutting-edge solutions to complex challenges. Our team of experts is dedicated to pushing the boundaries of technology and creativity.</p>
+            </div>
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="About InnoGryph">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
         <h2>Our Services</h2>
-        <div class="service-cards">
+        <div class="services-grid">
             <div class="service-card">
-                <h3>AI-Powered Data Insights</h3>
-                <p>Transform your data into actionable insights that drive smarter business decisions.</p>
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Custom web solutions tailored to your needs</p>
             </div>
             <div class="service-card">
-                <h3>Custom Automation Solutions</h3>
-                <p>Automate repetitive tasks and save valuable time with our tailored AI-driven tools.</p>
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Apps</h3>
+                <p>Innovative mobile applications for iOS and Android</p>
             </div>
             <div class="service-card">
-                <h3>Predictive Analytics</h3>
-                <p>Anticipate trends and optimize your operations with our advanced predictive models.</p>
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analytics</h3>
+                <p>Powerful insights from your data</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Ready to take your business to the next level? Get in touch with us today.</p>
-        <a href="mailto:contact@innogryph.com" class="contact-button">Email Us</a>
-    </section>
-
-    <footer class="footer">
+    <footer>
         <p>&copy; 2024 InnoGryph. All rights reserved.</p>
-        <p>Follow us on: 
-            <a href="#">LinkedIn</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">Facebook</a>
-        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
-</body>
-</html>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for service cards
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
