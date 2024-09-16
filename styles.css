@@ -30,28 +30,41 @@ header.scrolled {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/* Nav Container */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
+    height: 60px;
 }
 
+/* Logo Styles */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Logo Image */
 .logo img {
     height: 60px;
     width: auto;
 }
 
+/* Navigation Links Container */
 .nav-links {
     display: flex;
     list-style: none;
 }
 
+/* Navigation Links Items */
 .nav-links li {
     margin-left: 30px;
 }
 
+/* Navigation Links Styles */
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
@@ -59,8 +72,30 @@ nav {
     font-weight: 600;
 }
 
+/* Hover Effect for Navigation Links */
 .nav-links a:hover {
     color: #00a8e8;
+}
+
+/* Navigation Button */
+.nav-button {
+    display: flex; /* Change to flex for perfect centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 8px 16px; /* Adjust padding for balanced look */
+    background-color: #00a8e8;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    line-height: 1; /* Ensure line-height doesn't interfere */
+    margin-left: 20px; /* Add margin to separate button from links */
+}
+
+/* Hover Effect for Button */
+.nav-button:hover {
+    background-color: #0077b6;
+    transform: translateY(-3px);
 }
 
 /* Hero section styles */

@@ -10,13 +10,15 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="/src/logo.jpeg" alt="InnoGryph Logo">
+                <!-- <img src="/src/logo.jpeg" alt="InnoGryph Logo"> -->
+                <a>innogryph</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-button">Book a call</a></li>
             </ul>
         </nav>
     </header>
@@ -29,6 +31,21 @@
         </div>
     </section>
 
+
+    <!-- Chat bot -->
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "5vyJmWeY1VWMct31Fyf6O",
+        domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="5vyJmWeY1VWMct31Fyf6O"
+        domain="www.chatbase.co"
+        defer
+    ></script>
+
     <section id="about" class="about">
         <div class="about-content">
             <div class="about-text">
@@ -37,7 +54,7 @@
                 <p>With a blend of strength, intelligence, and agility, we tackle each project with the same determination and vision that our griffin embodies. Our mission is to soar above conventional thinking and bring transformative ideas to life.</p>
             </div>
             <div class="about-image">
-                <img src="/api/placeholder/600/400" alt="InnoGryph Team">
+                <img src="/src/gryphon_flying.png" alt="InnoGryph Team">
             </div>
         </div>
     </section>
@@ -91,49 +108,4 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animation for service cards
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
-    </script>
+    <script src="script.js"></script>
