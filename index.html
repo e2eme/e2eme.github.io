@@ -3,109 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnoGryph - Innovative Solutions</title>
+    <title>InnoGryph - Innovative Solutions for a Brighter Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <!-- <img src="/src/logo.jpeg" alt="InnoGryph Logo"> -->
-                <a>innogryph</a>
+                <a href="#home">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="#00a8e8" />
+                        <path d="M25 25 L75 25 L75 75 L25 75 Z" fill="#121212" />
+                    </svg>
+                    <span>InnoGryph</span>
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact" class="nav-button">Book a call</a></li>
             </ul>
+            <a href="#contact" class="nav-button">Book a call</a>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to InnoGryph</h1>
-            <p>Innovative solutions for a brighter future</p>
-            <a href="#contact" class="cta-button">Get Started</a>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Welcome to InnoGryph">Welcome to InnoGryph</h1>
+                <p>Innovative solutions for a brighter future</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+            <div class="hero-background"></div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>InnoGryph is at the forefront of innovation, delivering cutting-edge solutions to complex challenges. Our team of experts is dedicated to pushing the boundaries of technology and creativity, just like the mythical griffin that inspires our name and logo.</p>
+                    <p>With a blend of strength, intelligence, and agility, we tackle each project with the same determination and vision that our griffin embodies. Our mission is to soar above conventional thinking and bring transformative ideas to life.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/src/gryphon_flying.png" alt="InnoGryph Team" class="parallax-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="/src/automation.avif" alt="AI-Powered Automation">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-card">
+                            <h3>AI-Powered Automation</h3>
+                            <p>Transform your business operations with our cutting-edge AI-driven automation solutions. We harness the power of artificial intelligence to streamline your workflows, minimize human error, and dramatically boost productivity. Our custom-tailored systems learn and adapt to your unique business processes, continuously improving efficiency and freeing your team to focus on high-value tasks.</p>
+                            <a href="#contact" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-item reverse">
+                    <div class="service-image">
+                        <img src="/src/analytics.jpg" alt="Predictive Analytics & Insights">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-card">
+                            <h3>Predictive Analytics & Insights</h3>
+                            <p>Unlock the full potential of your data with our advanced predictive analytics and insights services. We employ sophisticated machine learning models and data mining techniques to uncover hidden patterns and trends in your business data. Our predictive models don't just tell you what happened – they forecast what will happen, enabling you to make proactive, data-driven decisions.</p>
+                            <a href="#contact" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="/src/ai-dev.jpg" alt="Custom AI Development">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-card">
+                            <h3>Custom AI Development</h3>
+                            <p>Elevate your business capabilities with our bespoke AI development services. We work closely with your team to design and implement AI-driven applications that address your specific challenges and capitalize on unique opportunities. Whether you need natural language processing for customer service, computer vision for quality control, or complex AI algorithms for financial modeling, our expert developers create tailored solutions.</p>
+                            <a href="#contact" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 InnoGryph. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-    </section>
+    </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="script.js"></script>
 
-    <!-- Chat bot -->
     <script>
         window.embeddedChatbotConfig = {
         chatbotId: "5vyJmWeY1VWMct31Fyf6O",
         domain: "www.chatbase.co"
         }
-    </script>
-    <script
+        </script>
+        <script
         src="https://www.chatbase.co/embed.min.js"
         chatbotId="5vyJmWeY1VWMct31Fyf6O"
         domain="www.chatbase.co"
-        defer
-    ></script>
-
-    <section id="about" class="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>InnoGryph is at the forefront of innovation, delivering cutting-edge solutions to complex challenges. Our team of experts is dedicated to pushing the boundaries of technology and creativity, just like the mythical griffin that inspires our name and logo.</p>
-                <p>With a blend of strength, intelligence, and agility, we tackle each project with the same determination and vision that our griffin embodies. Our mission is to soar above conventional thinking and bring transformative ideas to life.</p>
-            </div>
-            <div class="about-image">
-                <img src="/src/gryphon_flying.png" alt="InnoGryph Team">
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Web Development</h3>
-                <p>Custom web solutions tailored to your needs, built with cutting-edge technologies and designed for optimal user experience.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Mobile Apps</h3>
-                <p>Innovative mobile applications for iOS and Android that engage users and deliver seamless functionality across devices.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Analytics</h3>
-                <p>Powerful insights from your data, using advanced analytics and machine learning to drive informed decision-making.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Contact Us</h2>
-                <form action="https://formspree.io/f/xkgwellk" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="email">Your email:</label>
-                        <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your message:</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>2024 InnoGryph. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+        defer>
+    </script>
+</body>
+</html>
