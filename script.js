@@ -61,4 +61,5 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Menu toggle or nav links not found.');
     }
+
 });
