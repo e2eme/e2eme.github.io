@@ -541,6 +541,24 @@ footer {
     color: #00a8e8;
 }
 
+.nav-links-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust this based on your header height */
+    right: 20px;
+    background: rgba(18, 18, 18, 0.95);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.nav-links-active a {
+    margin: 10px 0;
+    text-align: right;
+}
+
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -571,6 +589,47 @@ footer {
     
     .about-image {
         margin-top: 30px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+
+
+    .nav-links-active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        text-align: right;
     }
 }
 

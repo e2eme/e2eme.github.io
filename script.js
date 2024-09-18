@@ -50,11 +50,15 @@ serviceCards.forEach(card => {
     });
 });
 
-// Menu toggle for mobile view
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-links-active'); // Toggle class to show/hide the menu
+        });
+    } else {
+        console.error('Menu toggle or nav links not found.');
+    }
 });
