@@ -29,7 +29,7 @@ header.scrolled {
     background-color: rgba(18, 18, 18, 1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-
+/* Responsive Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -100,23 +100,58 @@ nav {
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
+.nav-links.show {
+    display: flex;
+}
+     
 .nav-button:hover {
     background-color: #0077b6;
     transform: translateY(-3px);
+}
+
+/* Hide navigation links on smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(18, 18, 18, 0.95);
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    .logo span {
+        display: none;
+    }
+
+    .nav-button {
+        display: none;
+    }
 }
 
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin-left: auto;
 }
 
-.bar {
+.menu-toggle .bar {
     width: 25px;
     height: 3px;
     background-color: #ffffff;
-    margin: 3px 0;
+    margin: 4px 0;
     transition: 0.4s;
 }
 
@@ -348,27 +383,33 @@ nav {
 .about {
     padding: 80px 20px;
     background-color: #1a1a1a;
+}
+
+.about-container {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Ensures responsiveness */
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 20px;
     padding: 20px;
 }
 
 .about-text {
     flex: 1;
+    min-width: 280px; /* Ensure text has a minimum width */
     padding-right: 20px;
     animation: fadeIn 1.5s ease-out;
 }
 
 .about-image {
     flex: 1;
+    min-width: 280px; /* Ensure image has a minimum width */
     text-align: center;
 }
 
@@ -384,6 +425,19 @@ nav {
 .parallax-image:hover {
     transform: translateY(-5px);
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 20px; /* Adds spacing between text and image */
+    }
+}
+
 
 /* Services Section */
 .services {
