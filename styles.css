@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #0077ED;
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --background: #000000;
+    --surface: #111111;
+    --surface-hover: #222222;
+    --gradient-1: linear-gradient(135deg, #00C6FF 0%,#0077ED  100%);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -46,8 +57,8 @@ nav {
     text-decoration: none;
 }
 
-.logo svg {
-    margin-right: 10px;
+.logo img {
+    max-width: 50px;
 }
 
 .logo a {
@@ -93,7 +104,7 @@ nav {
 .nav-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #00a8e8;
+    background: var(--gradient-1);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -160,7 +171,7 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #00a8e8;
+    background: var(--gradient-1);
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
@@ -186,176 +197,31 @@ nav {
 }
 
 .hero-content {
+    padding-top: 50px;
     position: relative;
     z-index: 2;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    position: relative;
+    font-size: 3.0rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
 }
 
-.glitch {
-    position: relative;
-    color: #ffffff;
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    letter-spacing: -0.02em;
 }
 
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 #00a8e8;
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitch-anim-2 3s 3 infinite alternate-reverse;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: -2px 0 #ff00ff;
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitch-anim 2.5s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim {
-    0% {
-        clip: rect(93px, 9999px, 91px, 0);
-    }
-    5% {
-        clip: rect(14px, 9999px, 33px, 0);
-    }
-    10% {
-        clip: rect(5px, 9999px, 97px, 0);
-    }
-    15% {
-        clip: rect(68px, 9999px, 36px, 0);
-    }
-    20% {
-        clip: rect(10px, 9999px, 25px, 0);
-    }
-    25% {
-        clip: rect(46px, 9999px, 46px, 0);
-    }
-    30% {
-        clip: rect(70px, 9999px, 4px, 0);
-    }
-    35% {
-        clip: rect(77px, 9999px, 92px, 0);
-    }
-    40% {
-        clip: rect(91px, 9999px, 64px, 0);
-    }
-    45% {
-        clip: rect(20px, 9999px, 48px, 0);
-    }
-    50% {
-        clip: rect(76px, 9999px, 39px, 0);
-    }
-    55% {
-        clip: rect(48px, 9999px, 46px, 0);
-    }
-    60% {
-        clip: rect(14px, 9999px, 46px, 0);
-    }
-    65% {
-        clip: rect(36px, 9999px, 31px, 0);
-    }
-    70% {
-        clip: rect(31px, 9999px, 97px, 0);
-    }
-    75% {
-        clip: rect(28px, 9999px, 81px, 0);
-    }
-    80% {
-        clip: rect(25px, 9999px, 71px, 0);
-    }
-    85% {
-        clip: rect(75px, 9999px, 90px, 0);
-    }
-    90% {
-        clip: rect(20px, 9999px, 5px, 0);
-    }
-    95% {
-        clip: rect(98px, 9999px, 81px, 0);
-    }
-    100% {
-        clip: rect(80px, 9999px, 51px, 0);
-    }
-}
-
-@keyframes glitch-anim-2 {
-    0% {
-        clip: rect(20px, 9999px, 15px, 0);
-    }
-    5% {
-        clip: rect(40px, 9999px, 63px, 0);
-    }
-    10% {
-        clip: rect(15px, 9999px, 77px, 0);
-    }
-    15% {
-        clip: rect(98px, 9999px, 66px, 0);
-    }
-    20% {
-        clip: rect(40px, 9999px, 55px, 0);
-    }
-    25% {
-        clip: rect(76px, 9999px, 76px, 0);
-    }
-    30% {
-        clip: rect(100px, 9999px, 34px, 0);
-    }
-    35% {
-        clip: rect(107px, 9999px, 122px, 0);
-    }
-    40% {
-        clip: rect(46px, 9999px, 95px, 0);
-    }
-    45% {
-        clip: rect(80px, 9999px, 45px, 0);
-    }
-    50% {
-        clip: rect(60px, 9999px, 80px, 0);
-    }
-    55% {
-        clip: rect(74px, 9999px, 56px, 0);
-    }
-    60% {
-        clip: rect(36px, 9999px, 96px, 0);
-    }
-    65% {
-        clip: rect(20px, 9999px, 90px, 0);
-    }
-    70% {
-        clip: rect(49px, 9999px, 78px, 0);
-    }
-    75% {
-        clip: rect(77px, 9999px, 66px, 0);
-    }
-    80% {
-        clip: rect(39px, 9999px, 99px, 0);
-    }
-    85% {
-        clip: rect(92px, 9999px, 40px, 0);
-    }
-    90% {
-        clip: rect(32px, 9999px, 72px, 0);
-    }
-    95% {
-        clip: rect(47px, 9999px, 60px, 0);
-    }
-    100% {
-        clip: rect(83px, 9999px, 10px, 0);
-    }
-}
 
 /* Hero Background Animation */
 .hero-background {
@@ -367,7 +233,7 @@ nav {
     background: url('\src\\hero-background2.jpg') no-repeat center center/cover;
     z-index: 1;
     opacity: 0.3;
-    animation: backgroundMove 10s infinite alternate;
+    animation: backgroundMove 40s infinite alternate;
 }
 
 @keyframes backgroundMove {
@@ -439,13 +305,12 @@ nav {
 }
 
 
-/* Services Section */
+/* Services section */
 .services {
-    padding: 100px 20px;
-    background: #121212;
-    color: #fff;
-    text-align: center;
+    padding: 120px 40px;
+    background: var(--surface);
 }
+
 
 .services h2 {
     margin-bottom: 50px;
@@ -461,49 +326,39 @@ nav {
     gap: 20px;
 }
 
-.service-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    position: relative;
-    overflow: hidden;
-    flex-direction: row;
-}
-
-.service-item.reverse {
-    flex-direction: row-reverse;
-}
-
-.service-image {
-    flex: 1;
-    position: relative;
-}
-
-.service-image img {
-    width: 80%; /* Adjust this percentage to control the size */
-    max-width: 500px; /* Set a maximum width for the images */
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
-    margin: 0 auto; /* Center the image within the container */
-    display: block; /* Ensure the image is displayed as a block element */
-}
-
 .service-content {
     flex: 1;
     padding: 20px;
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    transition: var(--transition);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
+
+.service-item.reverse {
+    flex-direction: row-reverse;
+}
+
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .learn-more {
@@ -519,6 +374,7 @@ nav {
 }
 
 /* Contact Section */
+
 .contact {
     padding: 60px 20px;
     background: #1a1a1a;
@@ -532,39 +388,50 @@ nav {
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+    margin-bottom: 20px;
 }
 
-input, textarea {
-    padding: 12px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    font-size: 16px;
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
 }
+
 
 .submit-button {
+    background: var(--gradient-1);
+    width: 100%;
     padding: 12px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: -0.02em;
+    transition: var(--transition);
     border: none;
-    background-color: #00a8e8;
-    color: #fff;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    color: white
 }
 
 .submit-button:hover {
-    background-color: #0077b6;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 119, 237, 0.3);
 }
+
 
 /* Footer */
 footer {
@@ -704,7 +571,7 @@ footer {
 .survey-button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #00a8e8;
+    background: var(--gradient-1);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
